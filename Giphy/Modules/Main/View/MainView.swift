@@ -18,6 +18,7 @@ public protocol MainViewProtocol: NSObjectProtocol {
     weak var delegate: MainViewDelegate? { get set }
     var collectionView: UICollectionView! { get }
     var searchBar: UISearchBar! { get }
+ //   var keyboardAvoidingView: UIView! { get set }
 }
 
 public class MainView: UIView, MainViewProtocol{
@@ -26,6 +27,7 @@ public class MainView: UIView, MainViewProtocol{
 
     weak public var delegate: MainViewDelegate?
     
+  //  @IBOutlet public var keyboardAvoidingView: UIView!
     @IBOutlet public var searchBar: UISearchBar!
     @IBOutlet public var collectionView: UICollectionView!
     

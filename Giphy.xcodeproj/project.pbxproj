@@ -8,11 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		15D8C0E55BE162F2E7BF1A8E /* Pods_Giphy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F13DC96830C837037A4CB7D /* Pods_Giphy.framework */; };
-		63049A701FDADF5B00B29F98 /* UIImage+animatedGIF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63049A6F1FDADF5B00B29F98 /* UIImage+animatedGIF.swift */; };
-		63049A721FDAEA6F00B29F98 /* giphy_swift.gif in Resources */ = {isa = PBXBuildFile; fileRef = 63049A711FDAEA6F00B29F98 /* giphy_swift.gif */; };
 		632C79461FD056CB000E7D07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632C79451FD056CB000E7D07 /* AppDelegate.swift */; };
 		632C794D1FD056CB000E7D07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 632C794C1FD056CB000E7D07 /* Assets.xcassets */; };
 		632C79501FD056CB000E7D07 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 632C794E1FD056CB000E7D07 /* LaunchScreen.storyboard */; };
+		635495651FDE938900F44ECD /* Defines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635495641FDE938900F44ECD /* Defines.swift */; };
 		635F13181FD17500008B1740 /* MainBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635F130C1FD17500008B1740 /* MainBuilder.swift */; };
 		635F13191FD17500008B1740 /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635F130D1FD17500008B1740 /* MainModel.swift */; };
 		635F131A1FD17500008B1740 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635F130E1FD17500008B1740 /* MainRouter.swift */; };
@@ -26,13 +25,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		63049A6F1FDADF5B00B29F98 /* UIImage+animatedGIF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+animatedGIF.swift"; sourceTree = "<group>"; };
-		63049A711FDAEA6F00B29F98 /* giphy_swift.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = giphy_swift.gif; sourceTree = "<group>"; };
 		632C79421FD056CB000E7D07 /* Giphy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Giphy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		632C79451FD056CB000E7D07 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		632C794C1FD056CB000E7D07 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		632C794F1FD056CB000E7D07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		632C79511FD056CB000E7D07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		635495641FDE938900F44ECD /* Defines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defines.swift; sourceTree = "<group>"; };
 		635F130C1FD17500008B1740 /* MainBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainBuilder.swift; sourceTree = "<group>"; };
 		635F130D1FD17500008B1740 /* MainModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
 		635F130E1FD17500008B1740 /* MainRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
@@ -63,19 +61,10 @@
 		63049A6D1FDADF1900B29F98 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				63049A711FDAEA6F00B29F98 /* giphy_swift.gif */,
+				635495641FDE938900F44ECD /* Defines.swift */,
 				635F13211FD17514008B1740 /* Base */,
-				63049A6E1FDADF3700B29F98 /* Categories */,
 			);
 			path = Common;
-			sourceTree = "<group>";
-		};
-		63049A6E1FDADF3700B29F98 /* Categories */ = {
-			isa = PBXGroup;
-			children = (
-				63049A6F1FDADF5B00B29F98 /* UIImage+animatedGIF.swift */,
-			);
-			path = Categories;
 			sourceTree = "<group>";
 		};
 		632C79391FD056CB000E7D07 = {
@@ -217,7 +206,7 @@
 				TargetAttributes = {
 					632C79411FD056CB000E7D07 = {
 						CreatedOnToolsVersion = 9.1;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -244,7 +233,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				63049A721FDAEA6F00B29F98 /* giphy_swift.gif in Resources */,
 				632C79501FD056CB000E7D07 /* LaunchScreen.storyboard in Resources */,
 				632C794D1FD056CB000E7D07 /* Assets.xcassets in Resources */,
 				635F131D1FD17500008B1740 /* MainCollectionViewCell.xib in Resources */,
@@ -277,11 +265,17 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Giphy/Pods-Giphy-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/FLAnimatedImage/FLAnimatedImage.framework",
 				"${BUILT_PRODUCTS_DIR}/GiphyCoreSDK/GiphyCoreSDK.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/TPKeyboardAvoiding/TPKeyboardAvoiding.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLAnimatedImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GiphyCoreSDK.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TPKeyboardAvoiding.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -314,7 +308,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				635F131A1FD17500008B1740 /* MainRouter.swift in Sources */,
-				63049A701FDADF5B00B29F98 /* UIImage+animatedGIF.swift in Sources */,
+				635495651FDE938900F44ECD /* Defines.swift in Sources */,
 				635F131F1FD17500008B1740 /* MainView.swift in Sources */,
 				635F13191FD17500008B1740 /* MainModel.swift in Sources */,
 				635F131C1FD17500008B1740 /* MainCollectionViewCell.swift in Sources */,
@@ -452,11 +446,13 @@
 			baseConfigurationReference = E25B3AD4E75DDB29CD9A4E43 /* Pods-Giphy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Giphy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dbbest.Giphy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -467,11 +463,13 @@
 			baseConfigurationReference = FC2427D2D2B06CE57F5DD179 /* Pods-Giphy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Giphy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dbbest.Giphy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

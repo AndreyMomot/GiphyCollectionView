@@ -24,16 +24,10 @@ public class MainModel: NSObject, MainModelProtocol {
     override init() {
         self.items = []
         super.init()
-
-        self.items = self.getTestItems()
     }
 
     required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-
-    func getTestItems() -> [String] {
-        return []
     }
 
     // MARK: - MainModel methods

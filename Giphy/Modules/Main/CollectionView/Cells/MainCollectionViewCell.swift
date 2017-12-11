@@ -7,12 +7,12 @@
 //
 
 import UIKit
+import SDWebImage
 
 class MainCollectionViewCell: UICollectionViewCell {
 
     weak var delegate: MainCellDelegate?
-    
-    @IBOutlet var cellImageView: UIImageView!
+    @IBOutlet var cellImageView: FLAnimatedImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -18,30 +18,33 @@
                 <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="6YK-iv-lta">
                     <rect key="frame" x="0.0" y="20" width="320" height="56"/>
                     <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="U6s-cv-ryY"/>
+                    </connections>
                 </searchBar>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="oAY-FZ-5ma">
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="VED-sE-Kyk">
                     <rect key="frame" x="0.0" y="76" width="320" height="492"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="frK-5n-9k5">
-                        <size key="itemSize" width="75" height="75"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="rR3-hO-46Z">
+                        <size key="itemSize" width="100" height="100"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                        <inset key="sectionInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="6YK-iv-lta" firstAttribute="top" secondItem="QRC-gi-WgL" secondAttribute="top" constant="20" id="Bwh-jf-esb"/>
-                <constraint firstItem="oAY-FZ-5ma" firstAttribute="leading" secondItem="QRC-gi-WgL" secondAttribute="leading" id="Q2i-Cr-M3c"/>
-                <constraint firstAttribute="bottom" secondItem="oAY-FZ-5ma" secondAttribute="bottom" id="cjG-zW-dDp"/>
-                <constraint firstItem="6YK-iv-lta" firstAttribute="leading" secondItem="QRC-gi-WgL" secondAttribute="leading" id="e6a-B7-Lyb"/>
-                <constraint firstAttribute="trailing" secondItem="oAY-FZ-5ma" secondAttribute="trailing" id="lkQ-8W-MeA"/>
-                <constraint firstItem="oAY-FZ-5ma" firstAttribute="top" secondItem="6YK-iv-lta" secondAttribute="bottom" id="qyL-vK-hdn"/>
-                <constraint firstAttribute="trailing" secondItem="6YK-iv-lta" secondAttribute="trailing" id="wtk-MG-wdd"/>
+                <constraint firstAttribute="trailing" secondItem="VED-sE-Kyk" secondAttribute="trailing" id="0bZ-cT-Dd1"/>
+                <constraint firstItem="VED-sE-Kyk" firstAttribute="top" secondItem="6YK-iv-lta" secondAttribute="bottom" id="E5B-de-CAB"/>
+                <constraint firstItem="6YK-iv-lta" firstAttribute="leading" secondItem="QRC-gi-WgL" secondAttribute="leading" id="GWk-LW-5eI"/>
+                <constraint firstAttribute="bottom" secondItem="VED-sE-Kyk" secondAttribute="bottom" id="Hsl-3b-cyb"/>
+                <constraint firstAttribute="trailing" secondItem="6YK-iv-lta" secondAttribute="trailing" id="LFh-VM-kVn"/>
+                <constraint firstItem="6YK-iv-lta" firstAttribute="top" secondItem="QRC-gi-WgL" secondAttribute="top" constant="20" id="Rfe-YD-pQf"/>
+                <constraint firstItem="VED-sE-Kyk" firstAttribute="leading" secondItem="QRC-gi-WgL" secondAttribute="leading" id="pf1-VR-81P"/>
             </constraints>
             <connections>
-                <outlet property="collectionView" destination="oAY-FZ-5ma" id="3Qx-xP-dYw"/>
+                <outlet property="collectionView" destination="VED-sE-Kyk" id="0ZZ-7x-U8I"/>
                 <outlet property="searchBar" destination="6YK-iv-lta" id="ogO-xV-bdo"/>
             </connections>
             <point key="canvasLocation" x="238" y="-72"/>

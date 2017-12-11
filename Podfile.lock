@@ -1,12 +1,23 @@
 PODS:
+  - FLAnimatedImage (1.0.12)
   - GiphyCoreSDK (1.0.1)
+  - SDWebImage/Core (4.2.2)
+  - SDWebImage/GIF (4.2.2):
+    - FLAnimatedImage (~> 1.0)
+    - SDWebImage/Core
+  - TPKeyboardAvoiding (1.3.2)
 
 DEPENDENCIES:
   - GiphyCoreSDK
+  - SDWebImage/GIF
+  - TPKeyboardAvoiding
 
 SPEC CHECKSUMS:
+  FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
   GiphyCoreSDK: 8671cc9be3debd6c653cacf17240b1959bf0d5c4
+  SDWebImage: 89a9d32cd520bbb46eb14e541d5109b3564af198
+  TPKeyboardAvoiding: cb69d5ddbe90ce0170e4bc2db1e5e41d4a3ad9a4
 
-PODFILE CHECKSUM: d916db9659c47a8ee902b78cd92c1c67447f8a19
+PODFILE CHECKSUM: 0970df35a73328eb33ca2d37f057e7d2644e3a13
 
 COCOAPODS: 1.3.0

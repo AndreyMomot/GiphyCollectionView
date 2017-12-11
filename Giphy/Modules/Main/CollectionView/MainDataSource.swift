@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class MainDataSource: NSObject, UICollectionViewDataSource {
     static let kCellIdentifier = "MainCollectionViewCell"
@@ -25,11 +26,17 @@ class MainDataSource: NSObject, UICollectionViewDataSource {
 
     // MARK: - Private methods
 
-    public func configureCell(cell:AnyObject) {
+    public func configureCell(cell:AnyObject, gif: String) {
+        
         guard cell is MainCollectionViewCell else {
             return
         }
-        (cell as! MainCollectionViewCell).cellImageView.image = UIImage.gif(url: self.model.items.first!)
+        (cell as! MainCollectionViewCell).cellImageView.sd_setShowActivityIndicatorView(true)
+        (cell as! MainCollectionViewCell).cellImageView.sd_setIndicatorStyle(.gray)
+        let gifURL = URL(string: gif)
+        (cell as! MainCollectionViewCell).cellImageView.sd_setImage(with: gifURL, placeholderImage: UIImage(named: "giphy_swift"), options: SDWebImageOptions.retryFailed) { (image, error, cacheType, url) in
+            (cell as! MainCollectionViewCell).cellImageView.sd_setShowActivityIndicatorView(false)
+        }
     }
 
     // MARK: - UICollectionViewDataSource
@@ -44,7 +51,8 @@ class MainDataSource: NSObject, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainDataSource.kCellIdentifier, for: indexPath)
-        self.configureCell(cell: cell)
+        let imageURL = self.model.items[indexPath.row]
+        self.configureCell(cell: cell, gif: imageURL)
         
         return cell
     }
