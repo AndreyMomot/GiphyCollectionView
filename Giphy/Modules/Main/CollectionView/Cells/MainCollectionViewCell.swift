@@ -17,17 +17,7 @@ class MainCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-
-    // MARK: - IBAction
-
-    @IBAction func someButtonAction() {
-        self.delegate?.cellDidTapSomeButton(cell: self)
-    }
 }
 
 
-protocol MainCellDelegate: NSObjectProtocol {
-
-    /** Delegate method example */
-    func cellDidTapSomeButton(cell: MainCollectionViewCell)
-}
+protocol MainCellDelegate: NSObjectProtocol {}

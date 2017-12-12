@@ -22,6 +22,7 @@
 		635F131F1FD17500008B1740 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635F13161FD17500008B1740 /* MainView.swift */; };
 		635F13201FD17500008B1740 /* MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 635F13171FD17500008B1740 /* MainView.xib */; };
 		635F13231FD17537008B1740 /* MVCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635F13221FD17537008B1740 /* MVCViewController.swift */; };
+		63B1A6ED1FDFD73F00349BE8 /* GiphyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B1A6EC1FDFD73F00349BE8 /* GiphyService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		635F13161FD17500008B1740 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		635F13171FD17500008B1740 /* MainView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainView.xib; sourceTree = "<group>"; };
 		635F13221FD17537008B1740 /* MVCViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVCViewController.swift; sourceTree = "<group>"; };
+		63B1A6EC1FDFD73F00349BE8 /* GiphyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiphyService.swift; sourceTree = "<group>"; };
 		6F13DC96830C837037A4CB7D /* Pods_Giphy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Giphy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E25B3AD4E75DDB29CD9A4E43 /* Pods-Giphy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Giphy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Giphy/Pods-Giphy.debug.xcconfig"; sourceTree = "<group>"; };
 		FC2427D2D2B06CE57F5DD179 /* Pods-Giphy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Giphy.release.xcconfig"; path = "Pods/Target Support Files/Pods-Giphy/Pods-Giphy.release.xcconfig"; sourceTree = "<group>"; };
@@ -61,8 +63,9 @@
 		63049A6D1FDADF1900B29F98 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				635495641FDE938900F44ECD /* Defines.swift */,
 				635F13211FD17514008B1740 /* Base */,
+				63B1A6EB1FDFD71900349BE8 /* Service */,
+				635495641FDE938900F44ECD /* Defines.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -88,7 +91,6 @@
 		632C79441FD056CB000E7D07 /* Giphy */ = {
 			isa = PBXGroup;
 			children = (
-				63049A6D1FDADF1900B29F98 /* Common */,
 				635F13061FD173E0008B1740 /* Modules */,
 				632C79451FD056CB000E7D07 /* AppDelegate.swift */,
 				632C794C1FD056CB000E7D07 /* Assets.xcassets */,
@@ -101,6 +103,7 @@
 		635F13061FD173E0008B1740 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				63049A6D1FDADF1900B29F98 /* Common */,
 				635F130B1FD17500008B1740 /* Main */,
 			);
 			path = Modules;
@@ -152,6 +155,14 @@
 				635F13221FD17537008B1740 /* MVCViewController.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		63B1A6EB1FDFD71900349BE8 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				63B1A6EC1FDFD73F00349BE8 /* GiphyService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		B2ACE9D9F41EC42165EA4383 /* Pods */ = {
@@ -310,6 +321,7 @@
 				635F131A1FD17500008B1740 /* MainRouter.swift in Sources */,
 				635495651FDE938900F44ECD /* Defines.swift in Sources */,
 				635F131F1FD17500008B1740 /* MainView.swift in Sources */,
+				63B1A6ED1FDFD73F00349BE8 /* GiphyService.swift in Sources */,
 				635F13191FD17500008B1740 /* MainModel.swift in Sources */,
 				635F131C1FD17500008B1740 /* MainCollectionViewCell.swift in Sources */,
 				635F13231FD17537008B1740 /* MVCViewController.swift in Sources */,

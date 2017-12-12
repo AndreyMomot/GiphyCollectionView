@@ -7,15 +7,14 @@
 //
 
 import UIKit
-import GiphyCoreSDK
 
 public typealias MainViewControllerType = MVCViewController<MainModelProtocol, MainViewProtocol, MainRouter>
 
 public class MainViewController: MainViewControllerType, UICollectionViewDelegate, UISearchBarDelegate {
 
     private var dataSource: MainDataSource!
-    var client: GPHClient!
-
+    private let giphy = GiphyService()
+    
     // MARK: - Initializers
 
     convenience init(withView view: MainViewProtocol, model: MainModelProtocol, router: MainRouter, dataSource: MainDataSource) {
@@ -39,13 +38,6 @@ public class MainViewController: MainViewControllerType, UICollectionViewDelegat
         self.customView.delegate = self
         self.connectCollectionViewDependencies()
         self.customView.searchBar.delegate = self
-        
-        client = GPHClient(apiKey: SOCIAL.GIPHY_API_KEY)
-        
-//        if let img = UIImage.gif(url: "https://media.giphy.com/media/RMonqmwIZagbm/giphy.gif") {
-//        self.model.items.append(img)
-//            print(self.model.items.count)
-//        }
     }
     
     public override func viewDidAppear(_ animated: Bool) {
@@ -65,48 +57,32 @@ public class MainViewController: MainViewControllerType, UICollectionViewDelegat
         collectionView.deselectItem(at: indexPath, animated: true)
     }
     
-    // ToDo: - Create API methods for search and others.
     func searchWithText(text: String) {
-        client.search(text, media: .gif, offset: 0, limit: 9, rating: .ratedG, lang: .english) { (response, error) in
-            
-            if let error = error {
-                print(error)
-            } else {
-                var ar: [String] = []
-                if let result = response?.data {
-                    for img in result {
-                        if let url = img.images?.fixedHeightSmall?.gifUrl {
-                            ar.append(url)
-                            self.model.items = ar
-                        }
-                    }
-                    ar.removeAll()
-                    DispatchQueue.main.async {
-                        self.customView.collectionView.reloadData()
-                    }
-                }
+        giphy.search(withTag: text, limit: 9, success: { (giphyUrls) in
+            self.model.items = giphyUrls
+            DispatchQueue.main.async {
+                self.customView.collectionView.reloadData()
             }
+        }) { (error) in
+            print(error)
         }
     }
     
     // MARK: - SearchBar Delegate methods - do it with filteredItems
     public func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchWithText(text: searchBar.text!)
+        if self.model.items.count == 0 {
+            self.customView.showNoResult()
+        }
     }
     
     public func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        self.customView.hideNoResult()
         if searchText.count > 1 {
             searchWithText(text: searchText)
         }
     }
     
-    // ToDo: - not working
-    public func searchBarBookmarkButtonClicked(_ searchBar: UISearchBar) {
-        self.model.items.removeAll()
-        self.customView.collectionView.reloadData()
-    }
-    
-    // ToDo: - not working
     public func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         self.model.items.removeAll()
         self.customView.collectionView.reloadData()
@@ -115,24 +91,12 @@ public class MainViewController: MainViewControllerType, UICollectionViewDelegat
 
 // MARK: - MainViewDelegate
 
-extension MainViewController: MainViewDelegate {
-
-    public func viewSomeAction(view: MainViewProtocol) {
-    }
-}
+extension MainViewController: MainViewDelegate {}
 
 // MARK: - MainModelDelegate
 
-extension MainViewController: MainModelDelegate {
-
-    public func modelDidChanged(model: MainModelProtocol) {
-    }
-}
+extension MainViewController: MainModelDelegate {}
 
 // MARK: - MainCellDelegate
 
-extension MainViewController: MainCellDelegate {
-
-    func cellDidTapSomeButton(cell: MainCollectionViewCell) {
-    }
-}
+extension MainViewController: MainCellDelegate {}

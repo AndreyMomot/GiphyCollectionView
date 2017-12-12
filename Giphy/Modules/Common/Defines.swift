@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct SOCIAL {
+struct AppApiServices {
     
-    static let GIPHY_API_KEY = "AI4LvDzfyMwmJEwFDah4i6RtIHHezBvw"
+    static let GiphyApiKey = "AI4LvDzfyMwmJEwFDah4i6RtIHHezBvw"
 }

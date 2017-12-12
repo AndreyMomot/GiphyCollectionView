@@ -9,6 +9,5 @@ target ‘Giphy’ do
   
 	pod 'GiphyCoreSDK'
     pod 'SDWebImage/GIF'
-    pod 'TPKeyboardAvoiding'
 
 end

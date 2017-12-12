@@ -8,10 +8,7 @@
 
 import UIKit
 
-public protocol MainModelDelegate: NSObjectProtocol {
-
-    func modelDidChanged(model: MainModelProtocol)
-}
+public protocol MainModelDelegate: NSObjectProtocol {}
 
 public protocol MainModelProtocol: NSObjectProtocol {
 
@@ -34,12 +31,4 @@ public class MainModel: NSObject, MainModelProtocol {
 
     weak public var delegate: MainModelDelegate?
     public var items: [String]
-
-    /** Implement MainModel methods here */
-
-
-    // MARK: - Private methods
-
-    /** Implement private methods here */
-
 }
